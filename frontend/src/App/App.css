@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.header {
+  background: #82c42d;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  max-width: 85%;
+  margin: auto;
+}
+
+.main_container {
+  max-width: 85%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_title {
+  color:rgb(71, 65, 65)
+}
+
+.main_img {
+  max-width: 50%;
+}
+
+.header_links {
+  font-size: 18pt;
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  vertical-align: middle;
+  padding: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+  text-shadow: 0px 1px 3px black;
+}
+
+.logo {
+  font-size: 26pt;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0px 1px 1px black;
+  padding: 10px;
+}
+
+button {
+  background-color: #d6d4d4;
+  border-radius: 5px;
+  border: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+button:hover {
+  transform: scale(1.01);
+  background-color: #82c42d;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  margin: auto;
+  padding: 5px;
+}
+
+input {
+  margin-bottom: 5px;
+}
+
+.reviewLink {
+  color: rgb(104, 104, 104);
+  background-color: #f8f8f8;
+  display: block;
+  bottom: 10px;
+  text-align: center;
+  position: absolute;
+}
+
+.profile_card {
+  border: 1px solid rgba(71, 65, 65, 0.158);
+  border-radius: 2%;
+  padding: 20px;
+  width: 90%;
+}
+
+.rest {
+  border: 1px solid #2eb8db48;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  width: 25%;
+  text-align: left;
+  padding: 10px;
+  margin: 25px;
+  position: relative;
+}
+
+img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.img_profile {
+  border-radius: 50%;
+  max-width: 250px;
+}
+
+.rests {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.rest.review {
+  width: 40%;
+}
+
+.comments.block {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.comment {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 40%;
+  margin: auto;
+}
