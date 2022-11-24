@@ -8,7 +8,7 @@ function Header():JSX.Element {
     <div className="app__container">
       <nav className="header__nav">
         <div className="header__container">
-        <img className="header__logo" src={logo} alt="logo" />
+          {/* <h1>logo</h1> */}
           <ul className="header__menu">
             <li>
               <NavLink className="header__item" to="/main">
@@ -18,6 +18,11 @@ function Header():JSX.Element {
             <li>
               <NavLink className="header__item" to="/auth">
                 Authorization
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="header__item" to="/profile">
+                Профиль
               </NavLink>
             </li>
           </ul>
