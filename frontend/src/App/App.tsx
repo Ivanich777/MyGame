@@ -9,6 +9,9 @@ import { Modal } from '../features/Modal/Modal';
 
 import * as api from './api';
 import CardList from '../features/CardList/CardList';
+import Header from '../features/Header/Header';
+import Auth from '../features/Auth/Auth';
+import Logout from '../features/Auth/Logout';
 
 function App():JSX.Element {
   const dispatch = useDispatch();
@@ -22,9 +25,11 @@ function App():JSX.Element {
     <Routes>
     <Route path="/" element={<Header />}>
       <Route path="/" element={<MainPage />} />
+      <Route path="auth/:name" element={<Auth />} />
       <Route path="/game" element={<CardList />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/modal" element={<Modal />} />
+      <Route path="/logout" element={<Logout />} />
     </Route>
     </Routes>
 
