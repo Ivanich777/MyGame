@@ -1,0 +1,132 @@
+/** @type {import('sequelize-cli').Migration} */
+module.exports = {
+  async up(queryInterface) {
+    const Card = [
+      {
+        answer: '165 см',
+        question: 'Какова длина самого длинного кабачка?',
+        cost: 300,
+        topic_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        answer: 'Книга рекордов Гиннесса',
+        question: 'Угадайте, какая самая похищаемая книга в мире?',
+        cost: 500,
+        topic_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        answer: '8 часов',
+        question: 'Сколько длился самый быстрый беспрерывный дрифт?',
+        cost: 200,
+        topic_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        answer: '1 млн',
+        question: 'Самое большое количество пчел, одновременно сидящих на человеческом теле?',
+        cost: 400,
+        topic_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        answer: '8 часов',
+        question: 'Cамая продолжительная планка в мире длилась...',
+        cost: 100,
+        topic_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        answer: 'Душечка',
+        question: 'Назовите прозвище героини фильма «В джазе только девушки» ─ Sugar в советском прокате.',
+        cost: 300,
+        topic_id: 2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        answer: 'Красотка',
+        question: 'Назовите популярный фильм с Ричардом Гиром и Джулией Робертс.',
+        cost: 400,
+        topic_id: 2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        answer: 'Криптон',
+        question: 'Назовите планету-родину Супермена',
+        cost: 200,
+        topic_id: 2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        answer: 'Кевин',
+        question: 'Назовите имя центрального персонажа первых частей «Один дома».',
+        cost: 100,
+        topic_id: 2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        answer: 'Паразиты',
+        question: 'какой фильм в 2020 году впервые получил одновременно Оскара в номинациях “Лучший фильм” и “Лучший иностранный художественный фильм",  “Лучшая режиссерская работа” и “Лучший оригинальный сценарий”?',
+        cost: 500,
+        topic_id: 2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        answer: 'Противопожарная стена',
+        question: 'Брандмауэр – это …',
+        cost: 300,
+        topic_id: 3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        answer: '42 градуса',
+        question: 'Какая примерная температура в среднем у птицы?',
+        cost: 500,
+        topic_id: 3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        answer: 'Дольку лимона',
+        question: 'Вместе с рюмкой коньяка в России обычно просят …',
+        cost: 100,
+        topic_id: 3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        answer: '13',
+        question: 'Какое число является чертовой дюжиной?',
+        cost: 200,
+        topic_id: 3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        answer: 'анекдот',
+        question: 'Назовите слово, прародителем которого стал греческий аналог «неизданный».',
+        cost: 400,
+        topic_id: 3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+    ];
+
+    await queryInterface.bulkInsert('Cards', Card);
+  },
+  async down(queryInterface) {
+    await queryInterface.bulkInsert('Cards');
+  },
+};
