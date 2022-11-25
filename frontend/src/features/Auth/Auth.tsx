@@ -14,13 +14,13 @@ function Auth(): JSX.Element {
   const [checkedPassword, setCheckedPassword] = useState('');
 
   if (name === 'logout') {
-    api[name]().then((res:Res) => res.message === 'Session destroy' && dispatch({ type: 'LOGOUT' }));
+    api[name]().then((res: Res) => res.message === 'Session destroy' && dispatch({ type: 'LOGOUT' }));
   }
 
-  const auth = (e:React.FormEvent):void => {
+  const auth = (e: React.FormEvent): void => {
     e.preventDefault();
     if (name === 'registration') {
-      api[name]({ login, email, password, checkedPassword }).then((res:Res) => {
+      api[name]({ login, email, password, checkedPassword }).then((res: Res) => {
         if (res.message === 'Пользователь с таким именем уже существует') {
           navigate('/auth/login');
         } else {
@@ -30,7 +30,7 @@ function Auth(): JSX.Element {
       });
     }
     if (name === 'login') {
-      api[name]({ login, email, password, checkedPassword }).then((res:Res) => {
+      api[name]({ login, email, password, checkedPassword }).then((res: Res) => {
         if (res.message === 'Пользователя с таким именем не существует') {
           navigate('/auth/registration');
         } else {
@@ -42,69 +42,70 @@ function Auth(): JSX.Element {
   };
 
   return (
-    <>
-    <h2>{name?.toUpperCase()}</h2>
-    <div className="form_container">
-      <form onSubmit={auth}>
-      {name === 'registration' && (
-        <div className="mb_3">
-        <label className="form_label">
-          Login
-          <input
-            onChange={(e) => setLogin(e.target.value)}
-            value={login}
-            name="login"
-            type="text"
-            className="form-control"
-          />
-        </label>
-        </div>
-      )}
-        <div className="mb_3">
-          <label className="form_label">
-            Email
-            <input
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-              name="email"
-              type="email"
-              className="form-control"
-            />
-          </label>
-        </div>
-        <div className="mb-3">
-        <label className="form-label">
-          Password
-          <input
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-            name="password"
-            type="password"
-            className="form-control"
-          />
-        </label>
-        </div>
-        {name === 'registration' && (
-          <div className="mb-3">
-        <label className="form-label">
-          CheckedPassword
-          <input
-            onChange={(e) => setCheckedPassword(e.target.value)}
-            value={checkedPassword}
-            name="checkedPassword"
-            type="password"
-            className="form-control"
-          />
-        </label>
-          </div>
-        )}
+    <div className="main_container">
+      <h2>{name?.toUpperCase()}</h2>
+      <div className="form_container">
+        <form onSubmit={auth}>
+          {name === 'registration' && (
 
-      <button className="btn btn-secondary" type="submit">
-        {name?.toUpperCase()}
-      </button>
-      </form>
+              <label className="form_label">
+                Login<br />
+                <input
+                  onChange={(e) => setLogin(e.target.value)}
+                  value={login}
+                  name="login"
+                  type="text"
+                  className="form-control"
+                />
+              </label>
+
+
+          )}
+
+            <label className="form_label">
+              Email
+              <input
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                name="email"
+                type="email"
+                className="form-control"
+              />
+            </label>
+
+
+            <label className="form-label">
+              Password
+              <input
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                name="password"
+                type="password"
+                className="form-control"
+              />
+            </label>
+
+          {name === 'registration' && (
+            <div className="mb-3">
+              <label className="form-label">
+                CheckedPassword
+                <input
+                  onChange={(e) => setCheckedPassword(e.target.value)}
+                  value={checkedPassword}
+                  name="checkedPassword"
+                  type="password"
+                  className="form-control"
+                />
+              </label>
+            </div>
+          )}
+
+          <button className="btn btn-secondary" type="submit">
+            {name?.toUpperCase()}
+          </button>
+        </form>
+      </div>
     </div>
-    </>
   );
 }
 

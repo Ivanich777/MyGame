@@ -44,9 +44,10 @@
 
 .modal_btn {
   width: 60%;
-  position: absolute;
-  bottom: -65%;
+  /* position: absolute;
+  bottom: -65%; */
   padding: 25px;
+  margin-top: 10px;
   font-size: 16pt;
 }
 

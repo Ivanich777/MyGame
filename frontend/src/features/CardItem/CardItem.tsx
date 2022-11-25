@@ -25,7 +25,7 @@ function CardItem({ card }: { card: Card }): JSX.Element {
       <div className={active ? 'modal active' : 'modal'} onClick={() => setActive(false)}>
         <div className={active ? 'modal_content active' : 'modal_content'} onClick={(e) => e.stopPropagation()}>
           <div className="modal_form">
-            <h2>Вопрос: {card.question}</h2>
+            <h3>Вопрос: {card.question}</h3>
             <input type="text" value={answer} onChange={(e) => setAnswer(e.target.value)} className="modal_inpt" name="answer" placeholder="Ваш ответ" />
             <button className="modal_btn" onClick={Logic} type="button">Ответить</button>
           </div>
