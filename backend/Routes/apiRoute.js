@@ -4,11 +4,11 @@ const { Card, Topic } = require('../db/models');
 router.get('/', async (req, res) => {
   try {
     const card = await Card.findAll({
-      // include: {
-      //   model: Topic,
-      //   raw: true,
-      //   attributes: {}
-      // },
+      include: {
+        model: Topic,
+        raw: true,
+        attributes: ['name'],
+      },
       attributes: ['id', 'answer', 'question', 'cost', 'topic_id'],
       raw: true,
     });
