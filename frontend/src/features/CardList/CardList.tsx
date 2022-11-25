@@ -10,12 +10,20 @@ function CardList(): JSX.Element {
 
   return (
     <div className="main_container">
-      <h1 className="main_title">Привет, USERNAME!</h1>
+      <h1 className="main_title"><strong>Привет, USERNAME!</strong></h1>
       <div className="game">
-        {topics.map((topic) => <div className="theme">{topic.name}</div>)}
-        {/* {cards.map((card) => (
-          <CardItem key={card.id} card={card} />
-        ))} */}
+        <div className="topicsdiv">
+          {topics.map((topic) => (
+            <>
+              <div className="theme">{topic.name}</div>
+              <div className="themesdiv">
+                {cards.filter((el) => el.topic_id === topic.id).map((card) => (
+                  <CardItem key={card.id} card={card} />
+                ))}
+              </div>
+            </>
+          ))}
+        </div>
       </div>
     </div>
   );

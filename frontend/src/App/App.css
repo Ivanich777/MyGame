@@ -91,21 +91,39 @@ a:hover {
   font-size: 16pt;
   border-radius: 8px;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
 }
 
+.topicsdiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+
 .theme {
-  width: 10%;
+  width: 95.5%;
   background-color: #82c42d;
   padding: 15px;
 }
 
+.themesdiv {
+  display: flex;
+  flex-direction: row;
+}
+
 .question {
   background-color: #ffffff;
-  width: 10%;
+  width: 200px;
   padding: 15px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
 }
 
 button {
