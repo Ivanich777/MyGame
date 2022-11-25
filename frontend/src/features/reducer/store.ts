@@ -1,10 +1,12 @@
 import { createStore, combineReducers } from 'redux';
 
 import { cardReducer } from './cardReduser';
+import { topicReducer } from '../Topic/topicReducer';
 
 const store = createStore(
   combineReducers({
     cardState: cardReducer,
+    topicState: topicReducer,
   })
 );
 

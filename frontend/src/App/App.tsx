@@ -9,11 +9,14 @@ import { Modal } from '../features/Modal/Modal';
 
 import * as api from './api';
 import CardList from '../features/CardList/CardList';
+import Header from '../features/Header/Header';
 
 function App():JSX.Element {
   const dispatch = useDispatch();
   useEffect(() => {
     api.loadCards().then((data) => dispatch({ type: 'INIT_CARD', payload: data })
+    );
+    api.loadTopics().then((data) => dispatch({ type: 'INIT_TOPICS', payload: data })
     );
   }, []);
 
