@@ -5,12 +5,16 @@ import { Provider, useDispatch } from 'react-redux';
 
 import Header from '../features/Header/Header';
 import MainPage from '../features/Main/MainPage';
+import { Profile } from '../features/Profile/Profile';
+import { Modal } from '../features/Modal/Modal';
 
 function App():JSX.Element {
   return (
     <Routes>
     <Route path="/" element={<Header />}>
-      <Route path="main" element={<MainPage />} />
+      <Route path="/" element={<MainPage />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/modal" element={<Modal />} />
     </Route>
     </Routes>
   );
