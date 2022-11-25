@@ -14,7 +14,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Topic.init({
-    name: DataTypes.TEXT
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER,
+    },
+    name: DataTypes.TEXT,
   }, {
     sequelize,
     modelName: 'Topic',

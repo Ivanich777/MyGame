@@ -11,7 +11,9 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 const apiRoure = require('./Routes/apiRoute');
+const topicRouter = require('./Routes/topicRouter');
 const authRouter = require('./Routes/authRouter');
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({ origin: ['http://localhost:3000'], credentials: true }));
@@ -19,6 +21,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(session(sessionConfig));
 app.use('/api', apiRoure);
+app.use('/api', topicRouter);
 app.use('/auth', authRouter);
 
 app.listen(port, () => {

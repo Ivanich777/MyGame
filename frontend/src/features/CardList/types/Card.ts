@@ -5,6 +5,7 @@ export default interface Card {
     cost: number;
     topic_id: number;
     'Topic.name': string;
+    'Topic.id': number;
 }
 
 export type CardId = Card['id'];

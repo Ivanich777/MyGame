@@ -27,7 +27,8 @@
 }
 
 .main_title {
-  color:rgb(71, 65, 65)
+  color:rgb(71, 65, 65);
+  text-align: center;
 }
 
 .main_img {
@@ -65,11 +66,12 @@ a:hover {
 }
 
 .welcome_page {
-  background-color: #d6d4d49f;
+  background-color: #ececec;
   width: 50%;
   padding: 50px;
   font-size: 20pt;
   border-radius: 8px;
+  margin: auto;
 }
 
 .welcome_link {
@@ -79,6 +81,49 @@ a:hover {
 .welcome_link:hover {
   color: #ff7c3b;
   text-shadow: 0px 1px 2px #b16037;
+}
+
+.game {
+  width: 85%;
+  margin: auto;
+  padding: 10px;
+  background-color: #ececec;
+  font-size: 16pt;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.topicsdiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.theme {
+  width: 95.5%;
+  background-color: #82c42d;
+  padding: 15px;
+}
+
+.themesdiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.question {
+  background-color: #ffffff;
+  width: 200px;
+  padding: 15px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
 }
 
 button {

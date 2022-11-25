@@ -18,6 +18,8 @@ function App():JSX.Element {
   useEffect(() => {
     api.loadCards().then((data) => dispatch({ type: 'INIT_CARD', payload: data })
     );
+    api.loadTopics().then((data) => dispatch({ type: 'INIT_TOPICS', payload: data })
+    );
   }, []);
 
   return (

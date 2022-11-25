@@ -1,8 +1,13 @@
 import Card from '../features/CardList/types/Card';
+import Topic from '../features/Topic/types/Topic';
 import User, { Res } from '../features/Auth/types/User';
 
  export const loadCards = async (): Promise< Card[] > => {
     const res = await fetch('http://localhost:4000/api');
+    return res.json();
+};
+export const loadTopics = async (): Promise< Topic[] > => {
+    const res = await fetch('http://localhost:4000/api/topic');
     return res.json();
 };
 export const registration = async (item: User):Promise<Res> => {
