@@ -5,7 +5,6 @@ import { RootState } from '../reducer/store';
 
 function CardList():JSX.Element {
   const { cards } = useSelector((state:RootState) => state.cardState);
-console.log(cards);
   return (
     <div>
 
