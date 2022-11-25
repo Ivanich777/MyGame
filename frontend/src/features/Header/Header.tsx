@@ -18,6 +18,7 @@ function Header(): JSX.Element {
             </div>
           ) : (
             <div>
+              <div>{user}</div>
             <NavLink className="header_links" to="/logout">
              Logout
             </NavLink>

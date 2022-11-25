@@ -12,7 +12,6 @@ export const registration = async (item: User):Promise<Res> => {
       credentials: 'include',
       body: JSON.stringify(item),
     });
-    console.log(res);
     return res.json();
   };
 
@@ -23,7 +22,6 @@ export const registration = async (item: User):Promise<Res> => {
       credentials: 'include',
       body: JSON.stringify(item),
     });
-    console.log(res);
     return res.json();
   };
 

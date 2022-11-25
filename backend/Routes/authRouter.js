@@ -22,14 +22,13 @@ router.post('/registration', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   const { password, email } = req.body;
-  console.log(req.body);
   if (password && email) {
     const user = await User.findOne({ where: { email } });
     if (user) {
       const isSame = await bcrypt.compare(password, user.password);
       if (isSame) {
         req.session.userId = user.id;
-        res.json({ message: 'успех', user });
+        res.json({ message: 'успех', user: user.email });
       }
     } else {
       res.json({ message: 'Ваш login или password указаны не верно' });
@@ -38,7 +37,6 @@ router.post('/login', async (req, res) => {
 });
 
 router.get('/logout', (req, res) => {
-  console.log('=======================');
   req.session.destroy(() => res.clearCookie('user_sid').json({ message: 'Session destroy' }));
 });
 
