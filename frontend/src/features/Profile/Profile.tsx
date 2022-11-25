@@ -6,7 +6,7 @@ export const Profile = (): JSX.Element => {
 
   return (
     <div className="main_container">
-      <h1 className="main_title">Если любишь играть - играй !</h1>
+      <h1 className="main_title">Если любишь играть - играй!</h1>
       <div className='profile_block'>
         <div className='profile_card'>
         <img className='img_profile' src='https://krasivosti.pro/uploads/posts/2021-03/1616475211_2-p-nyashnie-kotyata-foto-koshka-2.jpg' alt='avatar'/>
