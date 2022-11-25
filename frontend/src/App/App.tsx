@@ -20,6 +20,10 @@ function App():JSX.Element {
     );
   }, []);
 
+  useEffect(() => {
+    api.checkUser().then((data) => dispatch({ type: 'REGA', payload: data }));
+  }, []);
+
   return (
 
     <Routes>
