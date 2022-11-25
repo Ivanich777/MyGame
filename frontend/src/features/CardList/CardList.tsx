@@ -11,7 +11,7 @@ function CardList(): JSX.Element {
 
   return (
     <div className="main_container">
-      <h1 className="main_title"><strong>Привет, {user}, у тебя {points} очков</strong></h1>
+      <h1 className="main_title"><strong>Привет, {user}, у тебя {points} рублей</strong></h1>
       <div className="game">
         <div className="topicsdiv">
           {topics.map((topic) => (
