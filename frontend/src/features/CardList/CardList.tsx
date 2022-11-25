@@ -6,7 +6,7 @@ import { RootState } from '../reducer/store';
 function CardList(): JSX.Element {
   const { cards } = useSelector((state: RootState) => state.cardState);
   const { topics } = useSelector((state: RootState) => state.topicState);
-  console.log(topics);
+
   return (
     <div className="main_container">
       <h1 className="main_title"><strong>Привет, USERNAME!</strong></h1>
