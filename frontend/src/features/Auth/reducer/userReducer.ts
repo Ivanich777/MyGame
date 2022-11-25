@@ -1,24 +1,31 @@
 import Action from '../types/Action';
 
 export const init = {
-  user: ''
+  user: '',
+  points: 0,
 };
 
 export const userReducer = (
-  state: { user:string } = init,
+  state: { user: string, points: number } = init,
   action: Action
-) : { user:string } => {
+): { user: string, points: number } => {
   switch (action.type) {
     case 'REGA':
       return {
         ...state,
-        user: action.payload.user
+        user: action.payload.user,
+        points: action.payload.points
       };
-      case 'LOGOUT':
-        return {
-          ...state,
-          user: ''
-        };
-        default: return state;
+    case 'LOGOUT':
+      return {
+        ...state,
+        user: ''
+      };
+    case 'EDIT':
+      return {
+        ...state,
+        points: action.payload.points
+      };
+    default: return state;
   }
 };

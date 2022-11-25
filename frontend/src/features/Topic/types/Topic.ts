@@ -4,3 +4,8 @@ export default interface Topic {
 }
 
 export type TopicId = Topic['id'];
+
+export interface Score {
+  id: number;
+  answer: string;
+}

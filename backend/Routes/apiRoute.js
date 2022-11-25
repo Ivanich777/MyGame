@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Card, Topic } = require('../db/models');
+const { Card, Topic, User } = require('../db/models');
 
 router.get('/', async (req, res) => {
   try {
@@ -16,6 +16,22 @@ router.get('/', async (req, res) => {
     res.json(card);
   } catch (e) { console.log(e.message); }
 })
-  
+  .put('/score', async (req, res) => {
+    try {
+      const { id, answer } = req.body;
+      console.log(id, '===');
+      const user = await User.findOne({ where: { id: req.session.userId } });
+      const card = await Card.findOne({ where: { id: Number(id) } });
+      if (card.answer === answer) {
+        user.points += card.cost;
+      } else {
+        user.points -= card.cost;
+      }
+      user.save();
+      res.json({ points: user.points });
+    } catch (e) {
+      console.log(e.message);
+    }
+  });
 
 module.exports = router;

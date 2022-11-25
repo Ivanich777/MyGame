@@ -1,7 +1,8 @@
-import { Res } from './User';
+import { Res, ResScore } from './User';
 
 type Action =
 | { type: 'REGA'; payload: Res }
-| { type: 'LOGOUT' };
+| { type: 'LOGOUT' }
+| { type: 'EDIT', payload: ResScore}
 
 export default Action;

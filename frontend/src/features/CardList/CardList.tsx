@@ -6,12 +6,12 @@ import { RootState } from '../reducer/store';
 function CardList(): JSX.Element {
   const { cards } = useSelector((state: RootState) => state.cardState);
   const { topics } = useSelector((state: RootState) => state.topicState);
-  const { user } = useSelector((state: RootState) =>
-  state.userState);
+  const { user, points } = useSelector((state: RootState) =>
+    state.userState);
 
   return (
     <div className="main_container">
-      <h1 className="main_title"><strong>Привет, {user}</strong></h1>
+      <h1 className="main_title"><strong>Привет, {user}, у тебя {points} очков</strong></h1>
       <div className="game">
         <div className="topicsdiv">
           {topics.map((topic) => (
