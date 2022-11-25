@@ -7,6 +7,7 @@ import logo from './logo.png';
 function Header(): JSX.Element {
   const { user } = useSelector((state: RootState) =>
     state.userState);
+
   return (
     <div>
       <nav className="header">

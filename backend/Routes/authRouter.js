@@ -6,7 +6,7 @@ router.get('/login', async (req, res) => {
   const id = req.session.userId;
   if (id) {
     const user = await User.findOne({ where: { id } });
-    res.json({ message: 'Hi', user: user.login });
+    res.json({ message: 'Hi', user: user.login, points: user.points });
   } else {
     res.json({ message: 'no', user: '' });
   }
@@ -23,7 +23,9 @@ router.post('/registration', async (req, res) => {
       res.json({ message: 'Пользователь с таким именем уже существует' });
     } else if (password === checkedPassword) {
       const hash = await bcrypt.hash(password, 10);
-      const newUser = await User.create({ password: hash, email, login });
+      const newUser = await User.create({
+        password: hash, email, login, points: 0,
+      });
       req.session.userId = newUser.id;
       res.status(200).json({ message: 'все ок', user: newUser.login });
     }

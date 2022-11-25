@@ -4,7 +4,7 @@ import './App.css';
 import { Provider, useDispatch } from 'react-redux';
 
 import MainPage from '../features/Main/MainPage';
-import { Profile } from '../features/Profile/Profile';
+import  Profile  from '../features/Profile/Profile';
 import { Modal } from '../features/Modal/Modal';
 
 import * as api from './api';
