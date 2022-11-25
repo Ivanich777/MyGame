@@ -7,15 +7,6 @@ function CardList(): JSX.Element {
   const { cards } = useSelector((state: RootState) => state.cardState);
   const { topics } = useSelector((state: RootState) => state.topicState);
   console.log(topics);
-function CardList():JSX.Element {
-  const { cards } = useSelector((state:RootState) => state.cardState);
-  return (
-    <div>
-
-      {cards.map((card) => (
-          <CardItem key={card.id} card={card} />
-        ))}
-
   return (
     <div className="main_container">
       <h1 className="main_title"><strong>Привет, USERNAME!</strong></h1>
