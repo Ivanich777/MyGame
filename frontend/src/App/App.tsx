@@ -4,6 +4,8 @@ import './App.css';
 import { Provider, useDispatch } from 'react-redux';
 
 import MainPage from '../features/Main/MainPage';
+import { Profile } from '../features/Profile/Profile';
+import { Modal } from '../features/Modal/Modal';
 
 import * as api from './api';
 import CardList from '../features/CardList/CardList';
@@ -17,11 +19,14 @@ function App():JSX.Element {
 
   return (
 
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/main" element={<MainPage />} />
-        <Route path="/game" element={<CardList />} />
-      </Routes>
+    <Routes>
+    <Route path="/" element={<Header />}>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/game" element={<CardList />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/modal" element={<Modal />} />
+    </Route>
+    </Routes>
 
   );
 }
