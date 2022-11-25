@@ -1,5 +1,6 @@
 import Card from '../features/CardList/types/Card';
 import Topic from '../features/Topic/types/Topic';
+import User, { Res } from '../features/Auth/types/User';
 
  export const loadCards = async (): Promise< Card[] > => {
     const res = await fetch('http://localhost:4000/api');
@@ -9,12 +10,27 @@ export const loadTopics = async (): Promise< Topic[] > => {
     const res = await fetch('http://localhost:4000/api/topic');
     return res.json();
 };
+export const registration = async (item: User):Promise<Res> => {
+    const res = await fetch('http://localhost:4000/auth/registration', {
+      method: 'post',
+      headers: { 'Content-type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify(item),
+    });
+    return res.json();
+  };
 
-// export const addItem = async (item: Card): Promise<Card> => {
-//     const res = await fetch('http://localhost:4000/api', {
-//       method: 'post',
-//       headers: { 'Content-type': 'application/json' },
-//       body: JSON.stringify(item),
-//     });
-//     return res.json();
-//   };
+  export const login = async (item: User): Promise<Res> => {
+    const res = await fetch('http://localhost:4000/auth/login', {
+      method: 'post',
+      headers: { 'Content-type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify(item),
+    });
+    return res.json();
+  };
+
+  export const logout = async (): Promise<Res> => {
+    const res = await fetch('http://localhost:4000/auth/logout');
+    return res.json();
+  };
